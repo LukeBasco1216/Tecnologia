@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "prova-angular": {
+    "angular-gitpod": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/prova-angular",
+            "outputPath": "dist/angular-gitpod",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "prova-angular:build:production"
+              "browserTarget": "angular-gitpod:build:production"
             },
             "development": {
-              "browserTarget": "prova-angular:build:development"
+              "browserTarget": "angular-gitpod:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "prova-angular:build"
+            "browserTarget": "angular-gitpod:build"
           }
         },
         "test": {
@@ -99,6 +99,6 @@
     }
   },
   "cli": {
-    "analytics": "e62e3014-4b22-4b8d-8083-6ca3c4a9c88d"
+    "analytics": "2bec0715-007a-40fc-acc2-e911f9f50160"
   }
 }
