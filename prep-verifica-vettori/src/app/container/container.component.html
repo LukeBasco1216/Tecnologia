@@ -1,1 +1,10 @@
 <p>container works!</p>
+
+<h1>
+    <ul style="list-style: none;">
+        <li *ngFor="let macchina of macchine">
+            <app-macchina [name]="macchina"></app-macchina>
+        </li>
+    </ul>
+</h1>
+
