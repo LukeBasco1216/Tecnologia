@@ -9,12 +9,23 @@ import { SpotifyService } from 'src/services/spotify.service';
 })
 export class AppComponent {
 
+  newquery: string = "";
   title = 'first-routed-app';
-  obsTrack : Observable<Object>;
+  obsTrack: Observable<Object> | undefined ;
+  results: any;
   // faccio iniettare lo spotify service e faccio una ricerca
-  constructor(public SpotifyService : SpotifyService){
-    this.obsTrack = SpotifyService.searchTrack("lateralus");
-    this.obsTrack.subscribe((data)=>console.log(data)); //visualizzo la ricerca sulla console
-  } 
+  constructor(public spotify: SpotifyService) {
+   
+  }
+
+  submit(newquery:HTMLInputElement): void {
+    if (!newquery.value) {
+      return;
+    }
+    this.newquery = newquery.value;
+    this.obsTrack = this.spotify.searchTrack(this.newquery);
+    this.obsTrack.subscribe((data) => this.results = data); 
+  }
+
 
 }
