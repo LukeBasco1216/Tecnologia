@@ -29,16 +29,22 @@ export class TrackComponent implements OnInit {
     this.routeObs.subscribe(this.getRouterParam);
   }
 
+
+  spotifyServiceObs : any;
   //Ogni volta che viene invocata la route tracks/:id, l'observable richiama questo metodo
   getRouterParam = (params: ParamMap) =>
   {
     let trackId = params.get('id'); //Ottengo l'id dalla ParamMap
-    console.log (trackId); //Stampo su console
-    //this.service.getTrack() 
+    console.log (trackId); //Stampo su console  
+    // this.service.getTrack(trackId); 
+    this.spotifyServiceObs = this.service.getTrack(trackId) ;
+    this.spotifyServiceObs.subscribe((data: any)=>this.track = data)
   }
+
+  // dalla riga 26 a 38 serve per prendere l'id del cansone e stamparlo nel console
 
   back()
   {//DA FINIRE }
      
-}
+  }
 }

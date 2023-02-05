@@ -5,6 +5,7 @@
   <button (click)="submit(newquery)">Search</button>
 </p>
 
+<!-- *ngIf="results" controlla se ce qualcosa -->
 <div *ngIf="results">
   <div *ngIf="!results.tracks || results.tracks.items.length ==0">
     No tracks were found with the term '{{ query }}'
