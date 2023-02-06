@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { SpotifyService } from 'src/services/spotify.service';
 import { Observable } from 'rxjs';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-track',
@@ -14,13 +15,15 @@ export class TrackComponent implements OnInit {
   routeObs: Observable<ParamMap> | undefined; 
 
   track : any; //Qui salverò la traccia selezionata
+  // location: any;
   
   //Usiamo la dependency injection per farci mandare i moduli del routing e dello    
   //SpotifyService
   constructor(
     private route: ActivatedRoute, 
     private router: Router, 
-    private service: SpotifyService ) { }
+    private service: SpotifyService,
+    private location: Location ) { }
 
 
   ngOnInit(): void {
@@ -38,13 +41,14 @@ export class TrackComponent implements OnInit {
     console.log (trackId); //Stampo su console  
     // this.service.getTrack(trackId); 
     this.spotifyServiceObs = this.service.getTrack(trackId) ;
+    // codice non necessaria?
     this.spotifyServiceObs.subscribe((data: any)=>this.track = data)
   }
 
   // dalla riga 26 a 38 serve per prendere l'id del cansone e stamparlo nel console
 
-  back()
-  {//DA FINIRE }
-     
+  back() : void
+  {
+    this.location.back();
   }
 }
