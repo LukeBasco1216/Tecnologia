@@ -9,7 +9,7 @@ import { TrackComponent } from './track/track.component';
 const routes: Routes = [
   { path: '',   redirectTo: '/search', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
-  { path: 'album', component: AlbumComponent },
+  { path: 'album/:id', component: AlbumComponent },
   { path: 'artist/:id', component: ArtistComponent },
   { path: 'search', component: SearchComponent },
   { path: 'tracks/:id', component: TrackComponent },
