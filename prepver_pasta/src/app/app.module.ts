@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { CaratteristicheComponent } from './caratteristiche/caratteristiche.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { CaratteristicheComponent } from './caratteristiche/caratteristiche.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // importare questo se no non riesce e prendere l'injection nel service
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
