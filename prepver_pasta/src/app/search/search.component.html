@@ -4,12 +4,26 @@
     <input type="text" #newquery>
     <button (click)="submit(newquery)">Search</button>
 </p>
-<ul *ngIf="results">
+<!-- <ul *ngIf="results">
     <li *ngFor="let food of results.products" style="list-style: none;">
         <img src="{{food.image_front_small_url}}" alt="img">
-        <!--  <p><a [routerLink]="['/caratteristiche', food.id]" style="text-decoration: none;">{{food.abbreviated_product_name_fr}}
+          <p><a [routerLink]="['/caratteristiche', food.id]" style="text-decoration: none;">{{food.abbreviated_product_name_fr}}
               </a></p> -->
-        <p><a [routerLink]="['/item', food.id]" style="text-decoration: none;">{{food.abbreviated_product_name_fr}}
+        <!--<p><a [routerLink]="['/item', food.id]" style="text-decoration: none;">{{food.product_name}}
         </a></p>
     </li>
-</ul>
+</ul> -->
+
+
+<!-- the class in parent div is for centering items searched -->
+<div *ngIf="results" style="display: flex;" class="container d-flex justify-content-center">
+    <div *ngFor="let food of results.products" >
+        <div class="card" style="width: 18rem;" style="margin: 15px;">
+            <img class="card-img-top" src="{{food.image_front_small_url}}" alt="img">
+            <div class="card-body">
+              <p><a [routerLink]="['/item', food.id]" style="text-decoration: none;">{{food.product_name}}
+            </a></p>
+            </div>
+          </div>
+    </div>
+</div>

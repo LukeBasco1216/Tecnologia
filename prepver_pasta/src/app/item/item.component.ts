@@ -38,4 +38,10 @@ export class ItemComponent implements OnInit{
         this.searchFoodCharacteristicsObs.subscribe((data: any)=>{this.food = data; console.log(this.food)});
         // console.log(this.food) per sapere che data ho nel console
       }
+
+
+      back() : void
+      {
+        this.location.back();
+      }
 }
