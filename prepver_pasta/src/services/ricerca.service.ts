@@ -15,8 +15,8 @@ export class RicercaService {
     const headers = new HttpHeaders({
     });
 
-    let obsTracks = this.http.get(url, { headers });
-    return obsTracks;
+    let obsFoods = this.http.get(url, { headers });
+    return obsFoods;
  //Ritorno un observable ai componenti che richiedono il servizio
   }
 

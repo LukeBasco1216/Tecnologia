@@ -1,1 +1,16 @@
 <p>caratteristiche works!</p>
+<h3>Product characteristics</h3>
+<div style="display: flex;">
+    <div>
+        <p>Common name: {{food.product.generic_name_it}}</p>
+        <p>Quantity: {{food.product.quantity}}</p>
+        <p>packaging: <span style="color: blue;">{{food.product.packaging_old_before_taxonomization}}</span></p>
+        <img src="{{food.product.image_packaging_small_url}}" alt="img">
+        <p>brands: <span style="color: blue;">{{food.product.brands_imported}}</span></p>
+        <p>categories: <span style="color: blue;">{{food.product.categories_hierarchy}}</span></p>
+    </div>
+    <div>
+        <img src="{{food.product.image_front_small_url}}" alt="">
+    </div>
+</div>
+

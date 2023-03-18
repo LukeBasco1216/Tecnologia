@@ -7,12 +7,13 @@ import { SearchComponent } from './search/search.component';
 import { CaratteristicheComponent } from './caratteristiche/caratteristiche.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductchracteristicsService } from 'src/services/productchracteristics.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    CaratteristicheComponent
+    CaratteristicheComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     NgbModule 
   ],
-  providers: [],
+  providers: [ProductchracteristicsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
