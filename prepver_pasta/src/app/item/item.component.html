@@ -1,2 +1,15 @@
 <p>item works!</p>
-{{food | json}}
+<h3>Product characteristics</h3>
+<div style="display: flex;">
+    <div>
+        <p> <span class="font-weight-bold">Common name:</span> {{food.product.generic_name_it}}</p>
+        <p> <span class="font-weight-bold">Quantity:</span>  {{food.product.quantity}}</p>
+        <p> <span class="font-weight-bold">packaging:</span>  <span class="text-primary">{{food.product.packaging_old_before_taxonomization}}</span></p>
+        <img src="{{food.product.image_packaging_small_url}}" alt="img">
+        <p><span class="font-weight-bold">brands:</span> <span class="text-primary">{{food.product.brands_imported}}</span></p>
+        <p><span class="font-weight-bold">categories:</span> <span class="text-primary">{{food.product.categories_hierarchy}}</span></p>
+    </div>
+    <div>
+        <img src="{{food.product.image_front_small_url}}" alt="img">
+    </div>
+</div>
