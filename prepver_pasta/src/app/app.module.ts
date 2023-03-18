@@ -8,12 +8,14 @@ import { CaratteristicheComponent } from './caratteristiche/caratteristiche.comp
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductchracteristicsService } from 'src/services/productchracteristics.service';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     CaratteristicheComponent,
+    ItemComponent,
   ],
   imports: [
     BrowserModule,

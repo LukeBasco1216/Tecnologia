@@ -7,7 +7,9 @@
 <ul *ngIf="results">
     <li *ngFor="let food of results.products" style="list-style: none;">
         <img src="{{food.image_front_small_url}}" alt="img">
-        <p><a [routerLink]="['/caratteristiche', food.id]" style="text-decoration: none;">{{food.abbreviated_product_name_fr}}
+        <!--  <p><a [routerLink]="['/caratteristiche', food.id]" style="text-decoration: none;">{{food.abbreviated_product_name_fr}}
+              </a></p> -->
+        <p><a [routerLink]="['/item', food.id]" style="text-decoration: none;">{{food.abbreviated_product_name_fr}}
         </a></p>
     </li>
 </ul>
