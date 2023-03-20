@@ -6,4 +6,10 @@
     <button (click)="submit(newquery)">Search</button>
 </p>
 
-{{results | json}}
+<div *ngIf="results">
+    <div *ngFor="let birra of results">
+        <img src="{{birra.image_url}}" alt="img">
+        <h3><span>Name: </span> <a [routerLink]="['/item', birra.id]" style="text-decoration: none;">{{birra.name}}</a></h3>
+            <!-- <p><span>Description: </span>{{birra.description}}</p> -->
+    </div>   
+</div>
