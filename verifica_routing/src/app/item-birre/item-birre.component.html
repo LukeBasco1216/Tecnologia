@@ -1,13 +1,18 @@
-<p>item-birre works!</p>
 
-<div *ngFor="let birra of birra">
-    <img src="{{birra.image_url}}" alt="img">
-    <h3><span>Name: </span>{{birra.name}}</h3>
-    <p><span>Description: </span>{{birra.description}}</p>
-    <p><span>Date of first brewery: </span>{{birra.first_brewed}}</p>
-    <p><span>tips: </span>{{birra.brewers_tips}}</p>
-    <p><span>Volume: </span>{{birra.volume.value}} {{birra.volume.unit}}</p>
-    <p><span>Foods you can pair it to: </span> {{birra.food_pairing}}</p>
+<div *ngFor="let birra of birra" class="d-flex justify-content-center">
+    <div class="row">
+        <div class="col-lg-6">
+            <h3><span class="text-left">Name: </span>{{birra.name}}</h3>
+            <p><span class="font-weight-bold text-left" >Description: </span>{{birra.description}}</p>
+            <p><span class="font-weight-bold text-left" >Date of first brewery: </span>{{birra.first_brewed}}</p>
+            <p><span class="font-weight-bold text-left" >tips: </span>{{birra.brewers_tips}}</p>
+            <p><span class="font-weight-bold text-left" >Volume: </span>{{birra.volume.value}} {{birra.volume.unit}}</p>
+            <p><span class="font-weight-bold text-left" >Foods you can pair it to: </span> {{birra.food_pairing}}</p>
+        </div>
+        <div class="col-lg-6" style="align-items: center;">
+            <img src="{{birra.image_url}}" alt="img" style="height: 700px;">
+        </div>
+    </div>
 </div>   
 
-<p><a href (click)="back()" style="text-decoration: none;">Back</a></p>
+<h4><a href (click)="back()" class="text-decoration-none text-primary">Back</a></h4>

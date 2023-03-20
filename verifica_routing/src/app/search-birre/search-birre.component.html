@@ -1,16 +1,18 @@
-<p>search-birre works!</p>
-
-<p>
+<p class="text-center">
     cerca birra in base all'ID <br>
-    <input type="text" #newquery>
-    <button (click)="submit(newquery)">Search</button>
+    <input type="text" #newquery placeholder="example. 3" style="text-align:center"> 
+    <span class="pl-2"><button (click)="submit(newquery)">Search</button></span>
 </p>
 
-<div *ngIf="results">
+<div *ngIf="results" style="display: flex;" class="container d-flex justify-content-center">
     <div *ngFor="let birra of results">
-        <img src="{{birra.image_url}}" alt="img">
-        <!-- <span>Name: </span>  -->
-        <h3><a [routerLink]="['/item', birra.id]" style="text-decoration: none;">{{birra.name}}</a></h3>
-            <!-- <p><span>Description: </span>{{birra.description}}</p> -->
+        <div class="card" style="width: 18rem;" style="margin: 15px;">
+            <img class="card-img-top" src="{{birra.image_url}}" alt="img">
+            <div class="card-body">
+                <!-- <span>Name: </span>  -->
+                <h3><a [routerLink]="['/item', birra.id]" style="text-decoration: none;">{{birra.name}}</a></h3>
+                <!-- <p><span>Description: </span>{{birra.description}}</p> -->
+            </div>
+        </div>
     </div>   
 </div>

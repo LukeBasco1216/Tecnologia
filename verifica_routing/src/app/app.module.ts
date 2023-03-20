@@ -7,6 +7,7 @@ import { SearchBirreComponent } from './search-birre/search-birre.component';
 import { ItemBirreComponent } from './item-birre/item-birre.component';
 import { RicercaService } from 'src/services/ricerca.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [RicercaService],
   bootstrap: [AppComponent]
