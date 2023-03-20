@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchBirreComponent } from './search-birre/search-birre.component';
 import { ItemBirreComponent } from './item-birre/item-birre.component';
+import { RicercaService } from 'src/services/ricerca.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,9 @@ import { ItemBirreComponent } from './item-birre/item-birre.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RicercaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
