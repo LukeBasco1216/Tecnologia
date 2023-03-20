@@ -38,4 +38,9 @@ export class ItemBirreComponent implements OnInit{
         // console.log(this.food) per sapere che data ho nel console
       }
 
+      back() : void
+      {
+        this.location.back();
+      }
+
 }
