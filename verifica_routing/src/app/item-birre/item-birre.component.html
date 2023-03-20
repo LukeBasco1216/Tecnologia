@@ -1,1 +1,11 @@
 <p>item-birre works!</p>
+
+<div *ngFor="let birra of birra">
+    <img src="{{birra.image_url}}" alt="img">
+    <h3><span>Name: </span>{{birra.name}}</h3>
+    <p><span>Description: </span>{{birra.description}}</p>
+    <p><span>Date of first brewery: </span>{{birra.first_brewed}}</p>
+    <p><span>tips: </span>{{birra.brewers_tips}}</p>
+    <p><span>Volume: </span>{{birra.volume.value}} {{birra.volume.unit}}</p>
+    <p><span>Foods you can pair it to: </span> {{birra.food_pairing}}</p>
+</div>   
