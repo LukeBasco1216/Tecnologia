@@ -11,10 +11,16 @@ export class AppComponent {
   center : any;
   position : any;
   label : string;
+
+// può essere fatto in questo modo fuori dal constructor
+  coordC={lat: 45.516513, lng: 9.159780};
+  nome = "casa";
+
   constructor()
   {
     this.center={lat: 45.506738, lng: 9.190766};
     this.position = this.center;
     this.label = "ciao";
   }
+
 }
