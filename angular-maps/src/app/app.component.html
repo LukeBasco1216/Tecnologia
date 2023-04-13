@@ -5,6 +5,21 @@
   <map-marker [position]="position" [label]="label" [title]="title">
   </map-marker>
   
+  <!-- casa mia -->
   <map-marker [position]="coordC" [label]="nome" [title]="title">
   </map-marker>
+
+  <map-circle [center]="position"
+  [radius]="50"
+  [options] = 'circleOptions'>
+</map-circle>
+
+<map-circle [center]="coordC"
+[radius]="50"
+[options] = 'circleOptions'>
+</map-circle>
 </google-map>
+
+<button (click)="red()">change color to red</button>
+<button (click)="yellow()">change color to yellow</button>
+<button (click)="green()">change color to green</button>
