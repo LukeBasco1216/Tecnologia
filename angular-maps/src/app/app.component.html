@@ -2,7 +2,15 @@
 <!--Centriamo la mappa alle nostre coordinate-->
 <google-map [center]="center">  
   <!--Mettiamo un marker alle nostre coordinate-->
-  <map-marker [position]="position" [label]="label" [title]="title">
+  <map-marker [position]="position" [label]="label" [title]="title" [options] = "markerOptions">
+  </map-marker>
+
+  <!-- animals -->
+  <map-marker [position]="coordbear" [options] = "markerOptionsbear">
+  </map-marker>
+  <map-marker [position]="coordelephant" [options] = "markerOptionselephant">
+  </map-marker>
+  <map-marker [position]="coordcow" [options] = "markerOptionscow">
   </map-marker>
   
   <!-- casa mia -->
