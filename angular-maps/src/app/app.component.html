@@ -5,6 +5,11 @@
   <map-marker [position]="position" [label]="label" [title]="title" [options] = "markerOptions">
   </map-marker>
 
+  <map-polygon [paths]="vertices">
+  </map-polygon>
+  <map-polygon [paths]="rettangolo" [options] = "colorrect">
+  </map-polygon>
+
   <!-- animals -->
   <map-marker [position]="coordbear" [options] = "markerOptionsbear">
   </map-marker>
@@ -28,6 +33,11 @@
 </map-circle>
 </google-map>
 
+<h3>circle colour:</h3>
 <button (click)="red()">change color to red</button>
 <button (click)="yellow()">change color to yellow</button>
 <button (click)="green()">change color to green</button>
+<h3>rectangle colour:</h3>
+<button (click)="redrect()">change color to red</button>
+<button (click)="yellowrect()">change color to yellow</button>
+<button (click)="greenrect()">change color to green</button>
