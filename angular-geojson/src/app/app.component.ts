@@ -33,13 +33,13 @@ export class AppComponent implements AfterViewInit{
   }
 
   styleFunc = (feature: any) =>{
-    console.log(feature.i.properties.id)
+    console.log(feature.h)
     let newColor = "#FF0000"; //RED
-    if(feature.i.properties.id == 0) newColor = "#00FF00"; //GREEN
+    if(feature.h.id == 0) newColor = "#00FF00"; //GREEN
     else newColor = "#0000FF"; //BLUE
     return ({
       clickable: true,
-      fillColor: this.fillColor,
+      fillColor: newColor,
       strokeWeight: 1
     });
   }
