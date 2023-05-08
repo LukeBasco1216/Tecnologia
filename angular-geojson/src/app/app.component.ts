@@ -22,6 +22,7 @@ export class AppComponent implements AfterViewInit{
     //Questi dati dovremmo scaricarli dal server, per ora li abbiamo copiati nel file     geojson.model.ts
     this.geoJsonObject = GEOJSON;  
     console.log(this.geoJsonObject); //stampo l'oggetto geoJsonObject sulla console
+    this.markerGenerator();
   }
 
   ///////////////////
