@@ -1,9 +1,13 @@
-# pip install flask
-
+# pip install Flask-PyMongo
+# pip install Flask
+# pip install dnspython 
+# npm install -g --force nodemon
+# pip install flask-cors
 
 # Import the Flask module that has been installed.
-from flask import Flask
-from flask import send_file
+from flask import Flask, send_file, jsonify, request
+from flask_pymongo import PyMongo
+from flask_cors import CORS
 
 # Creating a new "app" by using the Flask constructor. Passes __name__ as a parameter.
 app = Flask(__name__)
