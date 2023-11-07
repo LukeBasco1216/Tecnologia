@@ -1,1 +1,11 @@
 <p>pokemon works!</p>
+
+<!-- {{ pokemons | json }} -->
+
+
+<!-- [routerLink]="['/pokemon', data.url.split('/')[6]]" -->
+<ul>
+    <li *ngFor="let data of pokemons.pokemon">
+      <a [routerLink]="['/pokemoninsiderinfo', data.pokemon.url.split('/')[6]]"><strong>{{data.pokemon.name}}</strong></a>
+    </li>
+  </ul>

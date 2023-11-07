@@ -1,0 +1,29 @@
+<p>pokemoninsiderinfo works!</p>
+
+
+
+<!-- {{ pokemoninfo | json }} -->
+
+<div *ngIf="pokemoninfo">
+    <h1>{{ pokemoninfo.name }}</h1>
+    <!-- <h3>Type: {{ pokemoninfo.types.type.name }}</h3> -->
+    <h3>Abilities:</h3>
+    <ul *ngFor="let item of pokemoninfo.abilities">
+        <li>
+          <strong>{{item.ability.name}}</strong>
+        </li>
+    </ul>
+    <h3>Held Items:</h3>
+    <ul *ngFor="let item of pokemoninfo.held_items">
+        <li>
+          <strong>{{item.item.name}}</strong>
+        </li>
+    </ul>
+    <h3>Stats:</h3>
+    <!-- pokemoninfo.stats.id NO, nonostante nel json ci sia pokemoninfo poi stat poi dei nomi che parte da 0-->
+    <ul *ngFor="let item of pokemoninfo.stats">
+        <li>
+          <strong>{{item.base_stat}} {{item.stat.name}}</strong>
+        </li>
+    </ul>
+</div>

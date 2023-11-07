@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListatypeComponent } from './listatype/listatype.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { PokemoninsiderinfoComponent } from './pokemoninsiderinfo/pokemoninsiderinfo.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListatypeComponent,
-    PokemonComponent
+    PokemonComponent,
+    PokemoninsiderinfoComponent
   ],
   imports: [
     BrowserModule,
