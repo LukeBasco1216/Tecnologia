@@ -9,9 +9,15 @@
     </li>
 </ul> -->
 
+<!-- <ul>
+    <li *ngFor="let data of dati.results">
+      <a [routerLink]="['/pokemon']"><strong>{{data.name}}</strong></a>
+    </li>
+</ul> -->
+
 <ul>
     <li *ngFor="let data of dati.results">
-      <a [routerLink]="['/pokemons']"><strong>{{data.name}}</strong></a>
+      <a [routerLink]="['/pokemon', data.url.split('/')[6]]"><strong>{{data.name}}</strong></a>
     </li>
-</ul>
+  </ul>
 
