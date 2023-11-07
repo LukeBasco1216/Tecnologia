@@ -1,2 +1,17 @@
 <p>listatype works!</p>
+<!-- {{dati | json}} -->
+
+
+
+<!-- <ul *ngFor="let data of dati.results">
+    <li>
+      <a [href]="data.url"><strong>{{data.name}}</strong></a>
+    </li>
+</ul> -->
+
+<ul>
+    <li *ngFor="let data of dati.results">
+      <a [routerLink]="['/pokemons']"><strong>{{data.name}}</strong></a>
+    </li>
+</ul>
 

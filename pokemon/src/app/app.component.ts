@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { type } from 'src/model/type.model';
-import { Observable } from 'rxjs';
+// import { datatype } from 'src/model/datatype.model';
+// import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,23 +10,20 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit{
   title = 'pokemon';
-  obstype : Observable<type[]> = undefined!;
-  data : type[] = undefined!;
+  // obstype : Observable<datatype[]> = undefined!;
+  // data : datatype[] = undefined!;
 
   constructor(private http:HttpClient){
     }
 
 
   ngOnInit(): void {
-    this.obstype = this.http.get<type[]>('https://pokeapi.co/api/v2/type'),
-    this.obstype.subscribe(this.getdata)
+    // this.obstype = this.http.get<datatype[]>('https://pokeapi.co/api/v2/type'),
+    // this.obstype.subscribe(this.getdata)
   }
   
-  getdata = (data:type[]) => {
-    this.data = data;
-  }
-
-
-
+  // getdata = (data:datatype[]) => {
+  //   this.data = data;
+  // }
 
 }

@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { type } from 'src/model/type.model';
+import { Router } from '@angular/router';
+import { ElencotypepokemonsService } from 'src/services/elencotypepokemons.service';
+import { Datatype } from 'src/model/datatype.model';
 
 @Component({
   selector: 'app-listatype',
@@ -7,11 +10,19 @@ import { type } from 'src/model/type.model';
   styleUrls: ['./listatype.component.css']
 })
 export class ListatypeComponent implements OnInit{
-  @Input() listatypes : type[] = undefined!;
+  dati : any;
 
-  constructor(){}
+  constructor(private ElencotypepokemonsService: ElencotypepokemonsService, private http: HttpClient, private router: Router){}
+
+  mydata: any;
   ngOnInit(): void {
-    
+    this.ElencotypepokemonsService.getdata().subscribe((data: any) => {
+      this.dati = data;
+    });
   }
 
+  logUrl(event: Event, url: string) {
+    event.preventDefault(); // Prevent the default behavior of navigating to the URL
+    console.log(url); // Log the URL to the console
+  }
 }
