@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ElencotypepokemonsService } from 'src/services/elencotypepokemons.service';
 import { Datatype } from 'src/model/datatype.model';
+import { dati } from 'src/model/newDataListatype.model';
 
 @Component({
   selector: 'app-listatype',
@@ -10,13 +11,13 @@ import { Datatype } from 'src/model/datatype.model';
   styleUrls: ['./listatype.component.css']
 })
 export class ListatypeComponent implements OnInit{
-  dati : any;
+  dati : dati;
 
   constructor(private ElencotypepokemonsService: ElencotypepokemonsService, private http: HttpClient, private router: Router){}
 
   mydata: any;
   ngOnInit(): void {
-    this.ElencotypepokemonsService.getdata().subscribe((data: any) => {
+    this.ElencotypepokemonsService.getdata().subscribe((data: dati) => {
       this.dati = data;
     });
   }
