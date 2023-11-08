@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Pokemon } from 'src/model/pokemon.model';
 import { PokemoninsiderinfoDATAService } from 'src/services/pokemoninsiderinfo-data.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { PokemoninsiderinfoDATAService } from 'src/services/pokemoninsiderinfo-d
 export class PokemoninsiderinfoComponent implements OnInit{
 
   routeObs: Observable<ParamMap> | undefined; 
-  pokemoninfo : any;
+  pokemoninfo : Pokemon;
 
   constructor(
     private route: ActivatedRoute, 
@@ -35,6 +36,6 @@ export class PokemoninsiderinfoComponent implements OnInit{
     // this.service.getTrack(trackId); 
     this.pokeinfoServiceObs = this.service.getPokemons(pokeId) ;
     // codice non necessaria?
-    this.pokeinfoServiceObs.subscribe((data: any)=>this.pokemoninfo = data)
+    this.pokeinfoServiceObs.subscribe((data: Pokemon)=>this.pokemoninfo = data );
   }
 }

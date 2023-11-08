@@ -6,7 +6,12 @@
 
 <div *ngIf="pokemoninfo">
     <h1>{{ pokemoninfo.name }}</h1>
-    <!-- <h3>Type: {{ pokemoninfo.types.type.name }}</h3> -->
+    <h3>
+      <ng-container *ngFor="let tipo of pokemoninfo.types; let last = last">
+        {{ tipo.type.name }}
+        <ng-container *ngIf="!last">, </ng-container>
+      </ng-container>
+    </h3>
     <h3>Abilities:</h3>
     <ul *ngFor="let item of pokemoninfo.abilities">
         <li>
