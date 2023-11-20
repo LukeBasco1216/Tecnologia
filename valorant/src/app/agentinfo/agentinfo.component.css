@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.signage-container {
+  container-name: signage-container;
+  container-type: inline-size;
+  display: grid;
+  width: 100%;
+}
+
+.signage {
+  --outer-gap: 1rem;
+  --inner-gap: calc(var(--outer-gap) / 4);
+
+  background-color: var(--fg, #333333);
+  column-gap: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(6rem, 9rem) auto;
+  padding: var(--outer-gap);
+  row-gap: var(--outer-gap);
+  
+}
+
+.signage__figure,
+.signage__section {
+  align-items: center;
+  background-color: var(--bg, #ffffff);
+  color: var(--fg, #333333);
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0;
+  padding: var(--outer-gap);
+  text-align: center;
+}
+
+.signage__figure {
+  gap: var(--inner-gap);
+  grid-row-start: 1;
+  justify-content: start;
+  align-items: center; /* Center items/img horizontally */
+  justify-content: center; /* Center items/img vertically */
+}
+
+.signage__section {
+  gap: var(--outer-gap);
+  grid-row-start: 2;
+  justify-content: flex-start;
+}
+
+.signage__main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: 1.25rem;
+  gap: var(--outer-gap);
+}
+
+.signage__aside {
+  align-self: center;
+}
+
+.signage__info {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+@container signage-container (min-width: 768px) {
+  .signage {
+    --outer-gap: 1.5rem;
+
+    column-gap: var(--outer-gap);
+    display: grid;
+    grid-template-columns: minmax(4rem, 1fr) 3fr;
+    grid-template-rows: 1fr;
+    min-height: 275px;
+    row-gap: 0;
+  }
+
+  .signage__figure,
+  .signage__section {
+    grid-row-start: 1;
+  }
+
+  .signage__figure {
+    grid-column-start: 1;
+  }
+
+  .signage__section {
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    grid-column-start: 2;
+    justify-content: flex-start;
+    text-align: start;
+  }
+
+  .signage__aside {
+    align-self: flex-start;
+  }
+}
+
+.signage__figure svg {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+.signage__figure figcaption {
+  font-size: 0.875rem;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.signage__header .name {
+  flex: 1;
+  font-size: 2.5rem;
+  inset-block-start: -0.125em;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+}
+
+.signage__info .telephone {
+  color: inherit;
+}
+
+@container signage-container (min-width: 768px) {
+  .signage__figure svg {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.orientation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+
+.orientation:where(.left, .right) {
+  column-gap: 0.25rem;
+}
+
+.orientation:where(.left, .up-left, .down-left) .street-address,
+.orientation:where(.right, .up-right, .down-right) svg {
+  grid-column-start: 1;
+  justify-self: end;
+  text-align: end;
+}
+
+.orientation:where(.right, .up-right, .down-right) .street-address,
+.orientation:where(.left, .up-left, .down-left) svg {
+  grid-column-start: 2;
+  justify-self: start;
+  text-align: start;
+}
+
+.orientation:where(.up, .down) .street-address,
+.orientation:where(.up, .down) svg {
+  grid-column: 1 / -1;
+  justify-self: center;
+  text-align: center;
+}
+
+.orientation:where(.left, .right, .up, .up-left, .up-right) .street-address,
+.orientation:where(.left, .right, .down, .down-left, .down-right) svg {
+  grid-row-start: 1;
+}
+
+.orientation:where(.down, .down-left, .down-right) .street-address,
+.orientation:where(.up, .up-left, .up-right) svg {
+  grid-row-start: 2;
+}
+
+.orientation:where(.left, .right) .street-address,
+.orientation:where(.left, .right) svg {
+  align-self: center;
+}
+
+/* Demo Styles */
+body {
+  font-family: "Maven Pro", sans-serif;
+  line-height: 1.5;
+  padding: 1.5rem;
+}
+
+.signage-container:not(:first-child) {
+  margin-block-start: var(--gutter, 1.5rem);
+ }
+
+
+
+
+
+
+
+
+ .small-image {
+    width: 950px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+.fullbdimg {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text horizontally */
+    height: 100vh; /* Adjust the height as needed */
+}

@@ -1,0 +1,48 @@
+
+<!-- {{AgentInfo | json}} -->
+
+<div *ngIf="AgentInfo" class="fullbdimg">
+    <!-- <p>{{ AgentInfo.data.uuid }}</p> -->
+    <img [src]="AgentInfo.data.fullPortrait" alt="" class="small-image">
+    <h2>{{AgentInfo.data.description}}</h2>
+</div>
+
+
+<div class="signage-container">
+    <div class="signage" itemscope itemtype="https://schema.org/Organization">
+        <figure class="signage__figure">
+            <img [src]="AgentInfo.data.displayIconSmall" alt="Organization Logo">
+            <figcaption>the Angeleno</figcaption>
+          </figure>
+      <div class="signage__section">
+        <div class="signage__main">
+          <header class="signage__header">
+            <h2 class="name" itemprop="name">GEKKO,</h2>
+          </header>
+          <div class="signage__info">
+            <span itemprop="naics" content="424110">{{AgentInfo.data.description}} <br>
+            He is an {{AgentInfo.data.role.displayName}}, {{AgentInfo.data.role.description}}
+            </span>
+            <br>
+            <h3>Abilities:</h3>
+            <ul>
+                <li *ngFor="let item of AgentInfo.data.abilities">
+                    {{ item.displayName }},<br>
+                    <img [src]="item.displayIcon" alt=""><br>
+                    {{item.description}}<br>
+                    <hr>
+                </li>
+            </ul>
+            
+          </div>
+        </div>
+        <div class="signage__aside" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <span class="orientation up">
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- icons -->
+ 

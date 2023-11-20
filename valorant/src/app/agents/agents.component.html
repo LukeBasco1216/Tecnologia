@@ -1,0 +1,19 @@
+<p>agents works!</p>
+
+
+<!-- <ul>
+    <li *ngFor="let item of dati.data">
+      <a *ngFor="let data of item"><strong>{{data.displayName}}</strong></a>
+    </li>
+  </ul> -->
+
+<ul>
+  <li *ngFor="let data of dati.data">
+    <a [routerLink]="['/agentinfo', data.uuid]" style="cursor: pointer;"><strong>{{data.displayName}}</strong></a>
+    <!-- <div *ngFor="let item of data.abilities"> -->
+      <!-- <p>{{item.slot}}</p> -->
+      <!-- <p>{{item.displayName}}</p>
+    </div> -->
+  <!-- <p>{{data.uuid}}</p> -->
+  </li>
+</ul>
