@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+.add-inputs,
+.add-inputs input {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+.add-inputs button {
+    border-radius: 0;
+}
+
+.add-inputs input {
+    height: 48px;
+    width: 65px;
+    border-radius: 0;
+}
+
+
+.par-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container.my-5 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0 !important; 
+    margin-bottom: 0 !important;
+    /* !important ovverrides any conflicting styles */
+  }
+
+
+  .callout {
+    margin-top: 20px !important; 
+    margin-bottom: 10px !important; 
+  }
+
+
+  .callouts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.callouts-container p {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+

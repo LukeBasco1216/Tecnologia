@@ -1,17 +1,13 @@
-<p>home works!</p>
-
-
-
-<!-- <h2 [routerLink]="['/agents']" class="clickable-link">agents</h2> -->
+<p>maps works!</p>
 
 
 <div class="container">
-    <div class="card" *ngFor="let item of Endpoints">
+    <div class="card" *ngFor="let item of Maps.data">
         <div class="image">
-            <img [src]="item.img" alt="">
+            <img [src]="item.splash" alt="">
         </div>
         <div class="content">
-            <h2 [routerLink]="[item.RL]" style="cursor: pointer;">{{item.endpoint}}</h2>
+            <h2 [routerLink]="['/mapinfo', item.uuid]" style="cursor: pointer;">{{item.displayName}}</h2>
         </div>
     </div>
     <!-- <div class="card">

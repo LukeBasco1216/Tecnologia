@@ -1,0 +1,45 @@
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+
+<div class="container my-5" *ngIf="MapInfo">
+
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <img class="img-fluid details-img" [src]="MapInfo.data.splash" alt="">
+            <span><br></span>
+            <h3 class="callout">Call Outs:</h3>
+            <div class="callouts-container">
+                <span *ngFor="let item of MapInfo.data.callouts; let last = last">
+                    <p>{{item.regionName}} / {{item.superRegionName}}{{!last ? ' - ' : ''}}</p>
+                </span>
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+            <span>{{MapInfo.data.coordinates}}</span>
+            <h3>{{MapInfo.data.displayName}}</h3>
+            <h6>{{MapInfo.data.tacticalDescription}}</h6>
+            <div style="clear:both"></div>
+
+
+
+            <p class="par-title mt-4 mb-1">About this Map</p>
+            <p class="dummy-description mb-4">
+                {{MapInfo.data.narrativeDescription}}
+            </p>
+
+
+            <img class="img-fluid details-img" [src]="MapInfo.data.displayIcon" alt="">
+        </div>
+    </div>
+    <!-- End row -->
+</div>
+<!-- End Container -->
+
+

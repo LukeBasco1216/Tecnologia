@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Agentdata } from 'src/models/AgentInfo';
 import { ServicesService } from 'src/services/services.service';
+import { Location } from '@angular/common'; //IMPORTANTE per il pulsante back
 
 @Component({
   selector: 'app-agentinfo',
@@ -19,6 +20,7 @@ export class AgentinfoComponent implements OnInit{
     private route: ActivatedRoute, 
     private router: Router, 
     private service: ServicesService,
+    private location: Location
     ) { }
 
 
@@ -39,6 +41,11 @@ export class AgentinfoComponent implements OnInit{
       this.AgentInfoServiceObs = this.service.getAgentInfo(AgentUuid) ;
       // codice non necessaria?
       this.AgentInfoServiceObs.subscribe((data: Agentdata)=>this.AgentInfo = data );
+    }
+
+    back() : void
+    {
+      this.location.back();
     }
 
 }

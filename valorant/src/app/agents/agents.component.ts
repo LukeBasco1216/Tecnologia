@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Agents } from 'src/models/agents';
 import { ServicesService } from 'src/services/services.service';
+import { Location } from '@angular/common'; // IMPORTANTE per il pulsante back
 
 @Component({
   selector: 'app-agents',
@@ -12,12 +13,17 @@ import { ServicesService } from 'src/services/services.service';
 export class AgentsComponent implements OnInit{
   dati : Agents;
 
-  constructor(private Services: ServicesService, private http: HttpClient, private router: Router){}
+  constructor(private Services: ServicesService, private http: HttpClient, private router: Router, private location: Location){}
 
-  mydata: any;
+
   ngOnInit(): void {
     this.Services.getAgents().subscribe((data: Agents) => {
       this.dati = data;
     });
+  }
+
+  back() : void
+  {
+    this.location.back();
   }
 }

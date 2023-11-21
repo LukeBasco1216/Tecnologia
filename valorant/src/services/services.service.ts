@@ -17,4 +17,14 @@ export class ServicesService {
     const url = `https://valorant-api.com/v1/agents/${id}`;
     return this.http.get(url);
   }
+
+  getMaps() {
+    const url = `https://valorant-api.com/v1/maps`;
+    return this.http.get(url);
+  }
+
+  getMapInfo(id: string) {
+    const url = `https://valorant-api.com/v1/maps/${id}`;
+    return this.http.get(url);
+  }
 }
